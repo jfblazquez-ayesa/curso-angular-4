@@ -1,0 +1,49 @@
+<h2>Ejemplos de Pipes</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro de fecha</h3>
+  </div>
+  <div class="panel-body">
+    Aplicando filtro dd/MM/yyyy HH:mm => {{ birthdate | date: 'dd/MM/yyyy HH:mm' }}
+    <br/> Aplicando filtro fullDate => {{ birthdate | date: 'fullDate' }}
+    <br/> Aplicando filtro shortDate => {{ birthdate | date: 'shortDate' }}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro de texto</h3>
+  </div>
+  <div class="panel-body">
+    texto mayúsculas => {{ dummytext | uppercase }}
+    <br/> texto minúsculas => {{ dummytext | lowercase }}
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtro de texto HTML</h3>
+  </div>
+  <div class="panel-body">
+    sin filtro => {{ HTMLtext }}
+    <br/> con filtro => {{ HTMLtext | stripHtml }}
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">EJERCICIO 1</h3>
+  </div>
+  <div class="panel-body">
+      <input [(ngModel)]="ejercicio1Text" class="form-control"/>
+      <input [(ngModel)]="ejercicio1Length" class="form-control"/>
+      <input type="checkbox" [(ngModel)]="ejercicio1Ellipsis" name="ejercicio1Ellipsis"> Ellipsis
+      <br/>
+      <div class="alert alert-info">
+        El texto es 
+        {{ ejercicio1Text | truncateText: {maxLength:ejercicio1Length, ellipsis:ejercicio1Ellipsis} }}
+      </div>
+  </div>
+</div>

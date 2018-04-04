@@ -7,21 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  ejemplo1: string = "ejemplo de data-binding por interpolación";
-  ejemplo2: any = {
-    name: "dxfhgcjvn",
-    email: "dxghj@ghjkl.com"
+  // data-binding por interpolación (Componente ---> Template) -> {{ description1 }}
+  title1 :string = "Interpolación";
+  description1 :string = "Ejemplo de data-binding por interpolación.";
+
+  // property binding (Componente ---> Template)-> [href]="'mailto:' + user1.email" 
+  // property binding (Componente ---> Template) (otra opción)->  bind-innerHTML="user1.name" 
+  title2 :string = "Property binding";
+  description2: string = "Ejemplo de property binding.";
+  user1: any = {
+    name: "Ricardo Fernández",
+    email: "ricfer@gmail.com"
   };
 
-  //Ejemplo event binding
+  //event binding (Template ---> Componente) -> (click)="sumAction()"
+  title3 :string = "Event binding";
+  description3: string = "Ejemplo de event binding.";
   counter: number = 0;
-  sumaAction():void{
+  sumAction():void {
     this.counter++;
   }
 
+  // Two-way binding (Template <---> Componente)  
+  // EJ:
+  // <input [value] = "valor" (keyUp)="onKeyUp()"/>
+  // <input [(ngModel)] = "valor"/>
+  title4 :string = "Two-way binding";
+  description4: string = "Ejemplo de two-way binding (bi-direccional).";
+  content: string = "Escribe aquí ...";
+
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+   
+  
 }

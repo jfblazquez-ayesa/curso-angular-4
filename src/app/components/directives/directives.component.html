@@ -1,0 +1,140 @@
+<h2>Ejemplos de directivas</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title1 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description1 }}
+    <br/>
+    <button class="btn btn-default" (click)="changeColor('azul')">Azul</button>
+    <button class="btn btn-default" (click)="changeColor('verde')">Verde</button>
+    <div class="label label-primary" *ngIf="activeColor == 'azul'">COLOR ACTIVO AZUL</div>
+    <div class="label label-info" *ngIf="activeColor == 'verde'">COLOR ACTIVO VERDE</div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title2 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description2 }}
+    <br/>
+    <strong>LISTA DE COLORES</strong>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let color of colorsList; let i = index">{{ i+1 }}. {{ color }}</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title2 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description2 }}
+    <br/>
+    <strong>LISTA DE COLORES</strong>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let color of colorsList; let i = index">
+        <button class="btn btn-default" (click)="changeColor(color)">{{color}}</button>
+        <div class="label label-primary" *ngIf="activeColor == color">ACTIVO</div>
+      </li>
+    </ul>
+    <div class="alert" [ngClass]="{
+      'alert-success': activeColor === 'Verde',
+      'alert-warning': activeColor === 'Amarillo',
+      'alert-info': activeColor === 'Azul',
+      'alert-danger': activeColor === 'Rojo'
+    }">
+      <div class="label label-info">COLOR ACTIVO: {{activeColor}}</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title5 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description5 }}
+    <br/>
+    <div *ngIf="userIsLogin; then loginTrue else loginFalse"></div>
+    <ng-template #loginTrue>
+      <button class="btn btn-warning" (click)="changeUserStatus()">Logout</button> El usuario SI está logado.
+    </ng-template>
+    <ng-template #loginFalse>
+      <button class="btn btn-primary" (click)="changeUserStatus()">Login</button> El usuario NO está logado.
+    </ng-template>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title3 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description3 }}
+    <br/>
+    <button class="btn btn-default" (click)="changeAlertStatus('success')">Éxito</button>
+    <button class="btn btn-default" (click)="changeAlertStatus('error')">Error</button>
+    <div class="alert" [ngClass]="{
+        'alert-success': alertStatus === 'success',
+        'alert-danger': alertStatus === 'error'
+      }">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title4 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description4 }}
+    <br/>
+    <button class="btn btn-default" (click)="changeAlertStatus2('success')">Éxito</button>
+    <button class="btn btn-default" (click)="changeAlertStatus2('error')">Error</button>
+    <div class="alert" [ngStyle]="printInlineStyles()">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title4 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description4 }}
+    <br/>
+
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let color of alertColorsList; let i = index">
+        <button class="btn btn-default" (click)="changeAlertColor(color)">{{color}}</button>
+      </li>
+    </ul>
+
+    <div class="alert" [ngStyle]="printColorStyles()">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </div>
+  </div>
+
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Directiva personalizada simple-message</h3>
+  </div>
+  <div class="panel-body">
+    <div appSimpleMessage></div>
+  </div>
+</div>

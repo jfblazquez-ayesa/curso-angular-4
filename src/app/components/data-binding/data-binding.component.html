@@ -1,18 +1,49 @@
-<h2>Ejemplos de data-binding</h2>
+<h2>Ejemplos de Data Binding</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title1 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description1 }}
+  </div>
+</div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">interpolación</h3>
-    <div class="panel-body">
-      {{ ejemplo1 }}
-    </div>
+    <h3 class="panel-title">{{ title2 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description2 }}
+    <br/>
+    <a [href]="'mailto:' + user1.email">Email de <strong bind-innerHTML="user1.name"></strong></a>
   </div>
 </div>
+
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">property binding</h3>
-    <div class="panel-body">
-      <a [href]="'mailto:' + ejemplo2.email" [innerHTML]="ejemplo2.name"></a>
-    </div>
+    <h3 class="panel-title">{{ title3 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description3 }}
+    <br/>
+    <button class="btn btn-default" (click)="sumAction()">Pulsar</button>
+    Nº de clics: <span class="badge">{{ counter }}</span>
   </div>
 </div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title4 }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ description4 }}
+    <br/>
+    <input [(ngModel)]="content" class="form-control"/>
+    <br/>
+    <div class="alert alert-info">El contenido es: <strong>{{ content }}</strong></div>
+  </div>
+</div>
+
+
+
