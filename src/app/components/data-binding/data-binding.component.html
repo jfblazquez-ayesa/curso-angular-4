@@ -1,0 +1,18 @@
+<h2>Ejemplos de data-binding</h2>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">interpolación</h3>
+    <div class="panel-body">
+      {{ ejemplo1 }}
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">property binding</h3>
+    <div class="panel-body">
+      <a [href]="'mailto:' + ejemplo2.email" [innerHTML]="ejemplo2.name"></a>
+    </div>
+  </div>
+</div>
