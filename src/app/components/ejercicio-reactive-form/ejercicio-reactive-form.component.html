@@ -1,0 +1,73 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title }}</h3>
+  </div>
+  <div class="panel-body">
+    <p>{{ description }}</p>
+    <form [formGroup]="personaForm" novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+        <div [hidden]="personaForm.controls['nombre'].valid || personaForm.controls['nombre'].pristine" class="alert alert-danger">
+          El campo no es válido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" class="form-control" id="apellidos" formControlName="apellidos">
+        <div [hidden]="personaForm.controls['apellidos'].valid || personaForm.controls['apellidos'].pristine" class="alert alert-danger">
+          El campo no es válido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email">
+        <div [hidden]="personaForm.controls['email'].valid || personaForm.controls['email'].pristine" class="alert alert-danger">
+          El email no es válido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="area">Área</label>
+        <select class="form-control" id="area" formControlName="area">
+          <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="servicio">Servicio</label>
+        <select class="form-control" id="servicio" formControlName="servicio">
+          <option *ngFor="let servicio of servicios" [value]="servicio">{{ servicio }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="prioridad">Prioridad</label>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let prioridad of prioridades">
+            <input [value]="prioridad" formControlName="prioridad" type="radio" />&nbsp;{{ prioridad }}</li>
+        </ul>
+      </div>
+
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" formControlName="acuseDeRecibo"> ¿Enviar acuse de recibo?
+        </label>
+      </div>
+
+
+      <div class="form-group">
+        <label for="descripcion">Decripción</label>
+        <textarea class="form-control" id="descripcion" formControlName="descripcion"></textarea>
+        <div [hidden]="personaForm.controls['descripcion'].valid || personaForm.controls['descripcion'].pristine" class="alert alert-danger">
+          El campo no es válido
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

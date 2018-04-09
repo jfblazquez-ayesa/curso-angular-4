@@ -8,6 +8,9 @@ import localeEsExtra from '@angular/common/locales/extra/es';
 import localeCa from '@angular/common/locales/ca';
 import localeCaExtra from '@angular/common/locales/extra/ca';
 
+import { APP_ROUTING } from './app.routing';
+
+
 import { AppComponent } from './app.component';
 import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,6 +22,10 @@ import { StripHtmlPipe } from './pipes/strip-html.pipe';
 import { TruncateTextPipe } from './pipes/truncate-text.pipe';
 import { FormsComponent } from './components/forms/forms.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { ActiveUserPipe } from './pipes/active-user.pipe';
+import { ActiveUserComponent } from './components/active-user/active-user.component';
+import { EjercicioReactiveFormComponent } from './components/ejercicio-reactive-form/ejercicio-reactive-form.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 
@@ -34,12 +41,17 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
     StripHtmlPipe,
     TruncateTextPipe,
     FormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ActiveUserPipe,
+    ActiveUserComponent,
+    EjercicioReactiveFormComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    APP_ROUTING
   ],
   providers: [
     {provide: LOCALE_ID, useValue:'ca-ES'}
