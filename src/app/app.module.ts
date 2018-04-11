@@ -26,6 +26,14 @@ import { ActiveUserPipe } from './pipes/active-user.pipe';
 import { ActiveUserComponent } from './components/active-user/active-user.component';
 import { EjercicioReactiveFormComponent } from './components/ejercicio-reactive-form/ejercicio-reactive-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RoutingComponent } from './components/routing/routing.component';
+import { DummyEmployeeService } from './services/dummy-employee.service';
+import { RoutingChildComponent } from './components/routing-child/routing-child.component';
+import { ChildComponent } from './components/child/child.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { EjercicioDirectivaParentComponent } from './components/ejercicio-directiva-parent/ejercicio-directiva-parent.component';
+import { EjercicioDirectivaChildDirective } from './directives/ejercicio-directiva-child.directive';
+import { Child2Component } from './components/child2/child2.component';
 
 
 
@@ -45,7 +53,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ActiveUserPipe,
     ActiveUserComponent,
     EjercicioReactiveFormComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RoutingComponent,
+    RoutingChildComponent,
+    ChildComponent,
+    ParentComponent,
+    EjercicioDirectivaParentComponent,
+    EjercicioDirectivaChildDirective,
+    Child2Component
   ],
   imports: [
     BrowserModule,
@@ -54,7 +69,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     APP_ROUTING
   ],
   providers: [
-    {provide: LOCALE_ID, useValue:'ca-ES'}
+    {provide: LOCALE_ID, useValue:'ca-ES'},
+    DummyEmployeeService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="background-color: darkslategrey">
   <!-- 
   Antes de usar APP_ROUTING estábamos incluyendo TODO en el body  
   <app-data-binding></app-data-binding>
@@ -11,6 +11,8 @@
   
   <!-- Ahora hay que usar una directiva para utilizar la funcionalidad de APP_ROUTING-->
   <router-outlet></router-outlet>
+  <!-- Se pueden tener varios router-outlet -->
+  <router-outlet name="menu2"></router-outlet>
 </div>
 
 

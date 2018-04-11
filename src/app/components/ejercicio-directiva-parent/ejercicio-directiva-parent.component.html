@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ title }}</h3>
+  </div>
+  <div class="panel-body">
+    <p>{{ description }}</p>
+
+    <br/>
+    <strong>LISTA DE TYPES</strong>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let type of lista; let i = index">
+        <button class="btn btn-default" (click)="changeType(type)">{{type}}</button>
+      </li>
+    </ul>
+    <br/>
+    <!-- El binding NO sirve para este ejercicio porque cambia únicamente la propiedad, no el objeto completo, y si el objeto NO cambia, no se produce la invocación del método OnChanges en el hijo -->
+    <!-- <input [(ngModel)]="variable.msg" class="form-control"/> -->
+    <input #msg (change)="setVariableMsg(msg)" class="form-control" />
+    <br/>
+    <div [appEjercicioDirectivaChild]="variable"></div>
+  </div>
+
+
+  <div class="panel-heading">
+    <h3 class="panel-title">Ejemplos @ViewChild, @ViewChildren</h3>
+  </div>
+  <div class="panel-body">
+    <p>{{ description }}</p>
+    <button class="btn btn-default" (click)="child.suma">Suma</button>
+  </div>
+
+</div>

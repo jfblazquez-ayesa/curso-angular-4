@@ -4,6 +4,7 @@ export class Employee {
         public email:string,
         public job?:string,
         public age?:number,
-        public isActive?:boolean
+        public isActive?:boolean,
+        public id?:number
     ){}
 }
