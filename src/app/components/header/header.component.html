@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,22 +11,48 @@
       </button>
       <!-- <a class="navbar-brand" href="#"> {{ title }}  </a> ESTO NO INTERPRETA HTML, LO PINTA EN BRUTO -->
       <!-- <a class="navbar-brand" href="#" bind-innerHTML="title"></a> ASÍ INCRUSTAMOS EL VALOR DE title EN EL innerHTML -->
-      <a class="navbar-brand" href="#" [innerHTML]="title"></a> <!-- ASÍ INCRUSTAMOS EL VALOR DE title EN EL innerHTML (EQUIVALE AL ANTERIOR) -->
+      <a class="navbar-brand" href="#" [innerHTML]="title"></a>
+      <!-- ASÍ INCRUSTAMOS EL VALOR DE title EN EL innerHTML (EQUIVALE AL ANTERIOR) -->
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li routerLinkActive="active"><a [routerLink]="['data-binding']">data-binding</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['directives']">directives</a></li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['data-binding']">data-binding</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['directives']">directives</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['contacts']">contactos</a>
+        </li>
         <!-- Este enlace lo vamos a representar en otro <router-outlet> -->
-        <li routerLinkActive="active"><a [routerLink]="[{outlets: {menu2:['pipes']}}]">pipes</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['forms']">forms</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['parent']">parent</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['routes']">routes</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['reactive-forms']">reactive-forms</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['active-user']">active-user</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['ejercicio-reactive-forms']">ejercicio-reactive-forms</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['ejercicio-directiva-parent']">ejercicio-directiva-parent</a></li>
+        <li routerLinkActive="active">
+          <a [routerLink]="[{outlets: {menu2:['pipes']}}]">pipes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['forms']">forms</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['parent']">parent</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['routes']">routes</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['reactive-forms']">reactive-forms</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['active-user']">active-user</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['ejercicio-reactive-forms']">ejercicio-reactive-forms</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['ejercicio-directiva-parent']">ejercicio-directiva-parent</a>
+        </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>

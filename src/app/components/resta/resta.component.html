@@ -1,0 +1,13 @@
+<div>
+  <div class="label label-primay">
+    COMPONENTE RESTA
+  </div>
+  <button class="btn btn-default" (click)="child.resta()">
+    RESTA
+  </button>
+  <button class="btn btn-default" (click)="restaTodos()">
+    RESTA en todos
+  </button>
+  <!-- carga todos los app-child2 que están dentro de la etiquta app-resta -->
+  <ng-content></ng-content>
+</div>

@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child2.component.css']
 })
 export class Child2Component implements OnInit {
-
-  constructor() { }
-  counter:number=0;
-  suma(){
+  constructor() {}
+  counter: number = 0;
+  suma() {
     this.counter++;
   }
-
-  ngOnInit() {
+  resta() {
+    this.counter--;
   }
 
+  ngOnInit() {}
 }

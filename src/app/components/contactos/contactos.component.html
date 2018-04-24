@@ -1,0 +1,54 @@
+<h4>
+  MIS CONTACTOS
+</h4>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Crear / editar contacto</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table striped">
+      <thead>
+        <tr>
+
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.id }}</td>
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.phone }}</td>
+          <td>
+            <button class= "btn btn-primary glyphicon glyphicon-pencil" (click)="loadContact(contact)"></button>
+            <button class= "btn btn-danger glyphicon glyphicon-remove" (click)="deleteContact(contact)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Crear / editar contacto</h3>
+  </div>
+  <div class="panel-body">
+    <form [formGroup]="contactForm" novalidate>
+      <h4>Nuevo Contacto</h4>
+      <div class="form-goup">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" name="name" formControlName="name">
+      </div>
+      <div class="form-goup">
+        <label for="phone">Teléfono</label>
+        <input type="text" class="form-control" name="phone" formControlName="phone">
+      </div>
+      <button *ngIf="!contact.id" (click)="nuevoContacto()" class="btn btn-success" [disabled]="!contactForm.valid">Añadir contacto</button>
+    </form>
+  </div>
+</div>

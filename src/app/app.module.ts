@@ -34,6 +34,13 @@ import { ParentComponent } from './components/parent/parent.component';
 import { EjercicioDirectivaParentComponent } from './components/ejercicio-directiva-parent/ejercicio-directiva-parent.component';
 import { EjercicioDirectivaChildDirective } from './directives/ejercicio-directiva-child.directive';
 import { Child2Component } from './components/child2/child2.component';
+import { RestaComponent } from './components/resta/resta.component';
+import { ListadoContactosComponent } from './components/listado-contactos/listado-contactos.component';
+import { AgendaService } from './services/agenda.service';
+import { LoggerService } from './services/logger.service';
+import { ContactosComponent } from './components/contactos/contactos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpUrlsService } from './services/http-urls.service';
 
 
 
@@ -60,17 +67,24 @@ import { Child2Component } from './components/child2/child2.component';
     ParentComponent,
     EjercicioDirectivaParentComponent,
     EjercicioDirectivaChildDirective,
-    Child2Component
+    Child2Component,
+    RestaComponent,
+    ListadoContactosComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     APP_ROUTING
   ],
   providers: [
     {provide: LOCALE_ID, useValue:'ca-ES'},
-    DummyEmployeeService
+    DummyEmployeeService,
+    AgendaService,
+    LoggerService,
+    HttpUrlsService
   ],
   bootstrap: [AppComponent]
 })

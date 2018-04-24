@@ -11,11 +11,13 @@ import { RoutingComponent } from "./components/routing/routing.component";
 import { RoutingChildComponent } from "./components/routing-child/routing-child.component";
 import { ParentComponent } from "./components/parent/parent.component";
 import { EjercicioDirectivaParentComponent } from "./components/ejercicio-directiva-parent/ejercicio-directiva-parent.component";
+import { ContactosComponent } from "./components/contactos/contactos.component";
 
 export const APP_ROUTES: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'data-binding' },
     { path: 'data-binding', component: DataBindingComponent },
     { path: 'directives', component: DirectivesComponent },
+    { path: 'contacts', component: ContactosComponent },
     // Este componente lo vamos a representar en otro <router-outlet>
     { path: 'pipes', component: PipesComponent, outlet: "menu2" },
     { path: 'forms', component: FormsComponent },

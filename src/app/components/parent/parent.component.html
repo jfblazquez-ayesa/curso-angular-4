@@ -14,22 +14,75 @@
   </div>
   <div class="panel-body">
     <button class="btn btn-default" (click)="child.suma()">Suma</button>
-    <button class="btn btn-default" (click)="sumaTodos()()">SumaTodos</button>
-    <br/><span class="label label-primary">Esto es lo que se pinta desde la plantilla del padre, accediendo al componente hijo: {{ child.counter }}</span>
-    <br/><app-child2></app-child2>
-    <br/><app-child2></app-child2>
-    <br/><app-child2></app-child2>
-    <br/><app-child2></app-child2>
-    <br/><app-child2></app-child2>
-    <br/><app-child2></app-child2>
+    <button class="btn btn-default" (click)="sumaTodos()">SumaTodos</button>
+    <br/>
+    <span class="label label-primary">Esto es lo que se pinta desde la plantilla del padre, accediendo al componente hijo: {{ child.counter }}</span>
+    <br/>
+    <app-child2></app-child2>
+    <br/>
+    <app-child2></app-child2>
+    <br/>
+    <app-child2></app-child2>
+    <br/>
+    <app-child2></app-child2>
+    <br/>
+    <app-child2></app-child2>
+    <br/>
+    <app-child2>cosa dentro de la llamada SHADOW DOM al componente hijo</app-child2>
   </div>
 
   <div class="panel-heading">
-      <h3 class="panel-title">Ejemplos @ViewChild, @ViewChildren</h3>
+    <h3 class="panel-title">Ejemplos directiva</h3>
+  </div>
+  <div class="panel-body">
+    <div #mensaje></div>
+    <div #mensaje appEjercicioDirectivaChild></div>
+    <div #otraDirectiva appSimpleMessage></div>
+  </div>
+
+
+  <div class="panel-heading">
+    <h3 class="panel-title">Ejemplos @ContentChild, @ContentChildren</h3>
+  </div>
+  <div class="panel-body">
+    <button class="btn btn-default" (click)="child.suma()">Suma</button>
+    <button class="btn btn-default" (click)="sumaTodos()">SumaTodos</button>
+    <app-resta>
+      <br/>
+      <app-child2></app-child2>
+      <br/>
+      <app-child2></app-child2>
+      <br/>
+      <app-child2></app-child2>
+      <br/>
+      <app-child2></app-child2>
+      <br/>
+      <app-child2></app-child2>
+      <br/>
+      <app-child2>cosa dentro de la llamada SHADOW DOM al componente hijo</app-child2>
+    </app-resta>
+  </div>
+
+
+  <div class="panel-heading">
+      <h3 class="panel-title">Ejemplo Servicios</h3>
     </div>
     <div class="panel-body">
-      <div #mensaje></div>
-      <div #mensaje appSimpleMessage ></div>
-      <div #otraDirectiva appSimpleMessage ></div>
+      <app-listado-contactos></app-listado-contactos>
     </div>
+    <div class="panel-body">
+      <form #contactForm = "ngForm">
+        <h4>Nuevo Contacto</h4>
+        <div class="form-goup">
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" required name="name" [(ngModel)]="contact.name">
+        </div>
+        <div class="form-goup">
+          <label for="phone">Teléfono</label>
+          <input type="text" class="form-control" required name="phone" [(ngModel)]="contact.phone">
+        </div>
+        <button (click)="nuevoContacto(contactForm)" class="btn btn-success" [disabled]="!contactForm.form.valid">Añadir contacto</button>
+      </form>
+    </div>
+
 </div>
