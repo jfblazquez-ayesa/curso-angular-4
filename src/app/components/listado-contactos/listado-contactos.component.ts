@@ -12,7 +12,7 @@ export class ListadoContactosComponent implements OnInit {
   contacts: Array<Contact>;
   
   constructor(private agendaService: AgendaService) { 
-    this.contacts = this.agendaService.getContacts();
+    this.contacts = this.agendaService.getContactos();
   }
 
   ngOnInit() {
